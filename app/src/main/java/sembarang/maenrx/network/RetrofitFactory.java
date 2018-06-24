@@ -13,7 +13,7 @@ import sembarang.maenrx.BuildConfig;
 /**
  * Created by hendrawd on 07/02/17.
  */
-// TODO 18 buat RetrofitFactory
+// TODO 19 buat RetrofitFactory
 public class RetrofitFactory {
 
     public static Retrofit newInstance() {

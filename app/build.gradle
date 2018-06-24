@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+
     defaultConfig {
         applicationId "sembarang.maenrx"
         minSdkVersion 14
@@ -10,13 +11,15 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    // TODO 11 enable java 8
+
+    // TODO 12 enable java 8
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -28,14 +31,14 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
 
-    // TODO 2 import butterknife dan view binding
+    // TODO 2 import butterknife dan compilernya
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // TODO 4 import Timber untuk menggantikan default logging dari Android
     implementation 'com.jakewharton.timber:timber:4.7.0'
 
-    // TODO 14 import libraries berikut untuk belajar penggunaan rx di retrofit
+    // TODO 15 import libraries berikut untuk belajar penggunaan rx di retrofit
     implementation 'com.google.code.gson:gson:2.8.2'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'

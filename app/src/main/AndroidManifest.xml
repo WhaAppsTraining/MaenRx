@@ -4,7 +4,7 @@
     package="sembarang.maenrx"
     >
 
-    <!--TODO 15 tambahkan permission INTERNET-->
+    <!--TODO 16 tambahkan permission INTERNET-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+            <!--TODO bisa comment/uncomment intent filter masing-masing activity-->
+            <!--TODO untuk menentukan default activity yang dijalankan-->
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN"/>-->
 

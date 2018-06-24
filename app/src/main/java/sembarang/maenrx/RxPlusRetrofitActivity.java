@@ -22,7 +22,7 @@ import timber.log.Timber;
 /**
  * @author hendrawd on 24/06/18
  */
-// TODO 19 tambah Activity untuk mengetest retrofit call dengan observable
+// TODO 20 tambah Activity untuk mengetest retrofit call dengan observable
 public class RxPlusRetrofitActivity extends BaseActivity {
 
     private static final String GITHUB_USERNAME = "rachmanforniandi";
@@ -37,7 +37,8 @@ public class RxPlusRetrofitActivity extends BaseActivity {
         rxWay();
     }
 
-    // TODO 20 buat method request retrofit dengan cara biasa
+    // TODO 21 buat method request retrofit dengan cara biasa,
+    // panggil method ini dari onCreate dan pahami bagaimana jalannya aplikasi
     private void standardWay() {
         // mendapatkan object call dari retrofit service
         // List<Repo> adalah tipe yang otomatis didapatkan
@@ -66,7 +67,8 @@ public class RxPlusRetrofitActivity extends BaseActivity {
         });
     }
 
-    // TODO 21 buat method request retrofit dengan cara Reactive
+    // TODO 22 buat method request retrofit dengan cara Reactive,
+    // panggil method ini dari onCreate dan pahami bagaimana jalannya aplikasi
     private void rxWay() {
         retrofitService.getObservableRepoList(GITHUB_USERNAME)
                 .subscribeOn(Schedulers.newThread())

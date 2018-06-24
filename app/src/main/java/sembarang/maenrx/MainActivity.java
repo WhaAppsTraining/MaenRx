@@ -22,7 +22,8 @@ public class MainActivity extends BaseActivity implements Observer<String> {
         basicExampleWithDelayJava7();
     }
 
-    // TODO 9 buat contoh dasar penggunaan Rx
+    // TODO 9 buat method contoh dasar penggunaan Rx,
+    // panggil method ini dari onCreate dan pahami bagaimana jalannya aplikasi
     private void basicExample() {
         // object tidak harus string bisa apapun
         Observable.just("one", "two", "three", "four", "five")
@@ -32,10 +33,11 @@ public class MainActivity extends BaseActivity implements Observer<String> {
                 // update di main thread
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);
-        // TODO bandingkan dengan RecommendedAndroidWayActivity
+        // TODO 10 coba bandingkan dengan RecommendedAndroidWayActivity yang menggunakan AsyncTask
     }
 
-    // TODO 10 buat contoh dasar penggunaan Rx dengan delay
+    // TODO 11 buat method contoh dasar penggunaan Rx dengan delay,
+    // panggil method ini dari onCreate dan pahami bagaimana jalannya aplikasi
     private void basicExampleWithDelayJava7() {
         Observable.just("one", "two", "three", "four", "five")
                 .zipWith(
@@ -52,7 +54,8 @@ public class MainActivity extends BaseActivity implements Observer<String> {
                 .subscribe(this);
     }
 
-    // TODO 12 buat contoh dasar penggunaan Rx dengan delay di java 8
+    // TODO 13 buat contoh dasar penggunaan Rx dengan delay di java 8,
+    // panggil method ini dari onCreate dan pahami bagaimana jalannya aplikasi
     private void basicExampleWithDelayJava8() {
         Observable.just("one", "two", "three", "four", "five")
                 .zipWith(
@@ -62,10 +65,11 @@ public class MainActivity extends BaseActivity implements Observer<String> {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);
-        // TODO 13 review OtherJavaExamples.java
+        // TODO 14 review OtherJavaExamples.java
     }
 
-    // TODO 8 override tiap method Observer<String>
+    // TODO 8 override tiap method Observer<String> yang terdiri dari:
+    // onSubscribe, onNext, onError, dan onComplete
     @Override
     public void onSubscribe(Disposable d) {
         textView.append("\nonSubscribe");
