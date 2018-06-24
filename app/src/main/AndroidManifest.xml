@@ -4,7 +4,7 @@
     package="sembarang.maenrx"
     >
 
-    <!--TODO 14 tambahkan permission INTERNET-->
+    <!--TODO 15 tambahkan permission INTERNET-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -17,9 +17,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".RecommendedAndroidWayActivity">
@@ -31,11 +31,12 @@
         </activity>
         <activity android:name=".RxPlusRetrofitActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN"/>
 
-            <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ContohCallBackHellActivity"/>
     </application>
 
 </manifest>

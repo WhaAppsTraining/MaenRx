@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
  * @author hendrawd on 12/15/16
  */
 
-// TODO 15 buat model Repo
+// TODO 16 buat model Repo
 public class Repo {
     @SerializedName("id")
     public long id;

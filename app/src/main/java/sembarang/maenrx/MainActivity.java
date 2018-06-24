@@ -1,5 +1,7 @@
 package sembarang.maenrx;
 
+import android.os.Bundle;
+
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -13,6 +15,13 @@ import timber.log.Timber;
 // TODO 7 buat kelas ini supaya implement Observer<String>
 public class MainActivity extends BaseActivity implements Observer<String> {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // basicExample();
+        basicExampleWithDelayJava7();
+    }
+
     // TODO 9 buat contoh dasar penggunaan Rx
     private void basicExample() {
         // object tidak harus string bisa apapun
@@ -23,6 +32,7 @@ public class MainActivity extends BaseActivity implements Observer<String> {
                 // update di main thread
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);
+        // TODO bandingkan dengan RecommendedAndroidWayActivity
     }
 
     // TODO 10 buat contoh dasar penggunaan Rx dengan delay
@@ -45,7 +55,10 @@ public class MainActivity extends BaseActivity implements Observer<String> {
     // TODO 12 buat contoh dasar penggunaan Rx dengan delay di java 8
     private void basicExampleWithDelayJava8() {
         Observable.just("one", "two", "three", "four", "five")
-                .zipWith(Observable.interval(1000, TimeUnit.MILLISECONDS), (s, aLong) -> s)
+                .zipWith(
+                        Observable.interval(1000, TimeUnit.MILLISECONDS),
+                        (s, aLong) -> s
+                )
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);

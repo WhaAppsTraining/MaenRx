@@ -23,14 +23,23 @@ public class OtherJavaExamples {
 
         // method reference
         // stringList.forEach(System.out::println);
+        // java8
         methodThatNeedRunnable(this::doSomething);
+        // java7
+        // methodThatNeedRunnable(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         doSomething();
+        //     }
+        // });
 
         // stream
         // Stream<String> stringStream = Stream.of(strings);
     }
 
     private void doSomething() {
-        String methodName = new Object() {}.getClass().getEnclosingMethod().getName();
+        String methodName = new Object() {
+        }.getClass().getEnclosingMethod().getName();
         Timber.d("method %s dipanggil", methodName);
     }
 

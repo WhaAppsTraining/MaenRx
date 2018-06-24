@@ -11,7 +11,7 @@ import sembarang.maenrx.network.model.Repo;
 /**
  * Created by hendrawd on 15/10/16.
  */
-// TODO 16 buat retrofit service
+// TODO 17 buat retrofit service
 public interface RetrofitService {
 
     String BASE_URL = "https://api.github.com/";
