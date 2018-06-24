@@ -25,7 +25,7 @@ import timber.log.Timber;
 // TODO 19 tambah Activity untuk mengetest retrofit call dengan observable
 public class RxPlusRetrofitActivity extends BaseActivity {
 
-    private static final String GITHUB_USERNAME = "hendrawd";
+    private static final String GITHUB_USERNAME = "rachmanforniandi";
     private RetrofitService retrofitService;
 
     @Override
@@ -39,14 +39,20 @@ public class RxPlusRetrofitActivity extends BaseActivity {
 
     // TODO 20 buat method request retrofit dengan cara biasa
     private void standardWay() {
+        // mendapatkan object call dari retrofit service
+        // List<Repo> adalah tipe yang otomatis didapatkan
+        // (konversi otomatis json ke java object oleh GSON)
         Call<List<Repo>> call = retrofitService.getRepoList(GITHUB_USERNAME);
+        // menjalankan request di background
         call.enqueue(new Callback<List<Repo>>() {
             @Override
             public void onResponse(@NonNull Call<List<Repo>> call,
                                    @NonNull Response<List<Repo>> response) {
+                // response sukses
                 List<Repo> repoList = response.body();
                 if (repoList != null) {
                     for (Repo repo : repoList) {
+                        // menambahkan semua nama repo ke TextView
                         textView.append(String.format("\n%s", repo.name));
                     }
                 }
@@ -54,6 +60,7 @@ public class RxPlusRetrofitActivity extends BaseActivity {
 
             @Override
             public void onFailure(@NonNull Call<List<Repo>> call, @NonNull Throwable t) {
+                // response gagal
                 textView.append("\nonFailure");
             }
         });
