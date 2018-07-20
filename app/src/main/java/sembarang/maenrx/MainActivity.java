@@ -1,6 +1,9 @@
 package sembarang.maenrx;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import com.jakewharton.rxbinding2.view.RxView;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +22,35 @@ public class MainActivity extends BaseActivity implements Observer<String> {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // basicExample();
-        basicExampleWithDelayJava7();
+        // basicExampleWithDelayJava7();
+        // TODO 26 coba panggil method handleClickEvent dan jalankan aplikasi
+        handleClickEvent();
+    }
+
+    // TODO 25 tambahkan method handleClickEvent
+    private void handleClickEvent() {
+        Observable<Object> clickObservable = RxView.clicks(textView);
+        clickObservable.subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+                Toast.makeText(MainActivity.this, "View clicked", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 
     // TODO 9 buat method contoh dasar penggunaan Rx,

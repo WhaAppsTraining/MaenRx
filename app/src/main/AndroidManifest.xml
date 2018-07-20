@@ -18,11 +18,11 @@
         <activity android:name=".MainActivity">
             <!--TODO bisa comment/uncomment intent filter masing-masing activity-->
             <!--TODO untuk menentukan default activity yang dijalankan-->
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
 
-            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".RecommendedAndroidWayActivity">
             <!--<intent-filter>-->
@@ -32,11 +32,11 @@
             <!--</intent-filter>-->
         </activity>
         <activity android:name=".RxPlusRetrofitActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".ContohCallBackHellActivity"/>
     </application>
