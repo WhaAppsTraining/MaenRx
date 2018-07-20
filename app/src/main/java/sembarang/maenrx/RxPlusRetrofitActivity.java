@@ -25,7 +25,7 @@ import timber.log.Timber;
 // TODO 20 tambah Activity untuk mengetest retrofit call dengan observable
 public class RxPlusRetrofitActivity extends BaseActivity {
 
-    private static final String GITHUB_USERNAME = "rachmanforniandi";
+    private static final String GITHUB_USERNAME = "hendrawd";
     private RetrofitService retrofitService;
 
     @Override
