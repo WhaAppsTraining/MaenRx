@@ -23,11 +23,9 @@ public class MainActivity extends BaseActivity implements Observer<String> {
         super.onCreate(savedInstanceState);
         // basicExample();
         // basicExampleWithDelayJava7();
-        // TODO 26 coba panggil method handleClickEvent dan jalankan aplikasi
         handleClickEvent();
     }
 
-    // TODO 25 tambahkan method handleClickEvent
     private void handleClickEvent() {
         Observable<Object> clickObservable = RxView.clicks(textView);
         clickObservable.subscribe(new Observer<Object>() {
